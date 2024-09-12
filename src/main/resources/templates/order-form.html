@@ -16,19 +16,22 @@
 
     <label for="breadType">Bread Type:</label>
     <select id="breadType" name="breadType" th:field="*{breadType}">
-        <option th:each="breadType : ${breadType}" th:value="${breadType}" th:text="${breadType.displayName()}"></option>
-    </select>
-    <br>
-
-    <label for="topping">Topping:</label>
-    <select id="topping" name="topping" th:field="*{topping}">
-        <option th:each="topping : ${topping}" th:value="${topping}" th:text="${topping.displayToppings()}"></option>
+        <option th:each="breadType : ${breadType}" th:value="${breadType}"
+                th:text="${breadType.displayName()}"></option>
     </select>
     <br>
 
     <label for="condiment">Condiment:</label>
     <select id="condiment" name="condiment" th:field="*{condiment}">
-        <option th:each="condiment : ${condiment}" th:value="${condiment}" th:text="${condiment.displayCondiments()}"></option>
+        <option th:each="condiment : ${condiment}" th:value="${condiment}"
+                th:text="${condiment.displayCondiments()}"></option>
+    </select>
+    <br>
+
+    <label for="topping">Topping:</label>
+    <select id="topping" name="topping" th:field="*{topping}">
+        <option th:each="topping : ${topping}" th:value="${topping}"
+                th:text="${topping.displayToppings()}"></option>
     </select>
     <br>
 
