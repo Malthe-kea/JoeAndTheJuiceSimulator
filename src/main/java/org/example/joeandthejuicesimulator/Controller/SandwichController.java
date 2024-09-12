@@ -30,10 +30,16 @@ public class SandwichController {
         return "order-form";
     }
 
-//    @PostMapping("/order")
-//    public String placeOrder(@ModelAttribute SandwichOrder sandwichOrder) {
-//        //sandwichService.placeOrder(sandwichOrder);
-//        return "redirect:/orders";
-//    }
+    @PostMapping("/order")
+    public String placeOrder(@ModelAttribute SandwichOrder sandwichOrder) {
+        sandwichService.placeOrder(sandwichOrder);
+        return "redirect:/orders";
+    }
+
+    @GetMapping("/orders")
+    public String showOrders(Model model){
+        model.addAttribute("orders", sandwichService.getSandwichOrderList());
+        return "order-list";
+    }
 
 }
