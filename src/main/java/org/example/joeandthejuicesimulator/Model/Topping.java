@@ -30,7 +30,7 @@ public enum Topping {
         this.displayToppings = displayToppings;
     }
 
-    public String getDisplayToppings() {
+    public String displayToppings() {
         return displayToppings;
     }
 }

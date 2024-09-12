@@ -1,9 +1,6 @@
 package org.example.joeandthejuicesimulator.Controller;
 
-import org.example.joeandthejuicesimulator.Model.BreadType;
-import org.example.joeandthejuicesimulator.Model.SandwichOrder;
-import org.example.joeandthejuicesimulator.Model.Size;
-import org.example.joeandthejuicesimulator.Model.Topping;
+import org.example.joeandthejuicesimulator.Model.*;
 import org.example.joeandthejuicesimulator.Service.SandwichService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,6 +24,7 @@ public class SandwichController {
         model.addAttribute("size",Size.values());
         model.addAttribute("breadType", BreadType.values());
         model.addAttribute("topping", Topping.values());
+        model.addAttribute("condiment", Condiment.values());
         return "order-form";
     }
 

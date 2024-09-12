@@ -10,11 +10,13 @@
 <ul>
     <li th:each="order : ${orders}">
 
-        <strong th:text="${order.breadType.displayName}"></strong> with
-        <strong th:text="${order.topping.displayToppings}"></strong>,
-        Size: <strong th:text="${order.size.getSize()}"></strong>
+        <strong th:text="${order.breadType.displayName()}"></strong> with
+        <strong th:text="${order.topping.displayToppings()}"></strong>,
+        <strong th:text="${order.condiment.displayCondiments()}"></strong>
+        Size: <strong th:text="${order.size.displaySize()}"></strong>
+
     </li>
 </ul>
-<a th:href="@{/order}">Place another order</a>
+<a th:href="@{/}">Place another order</a>
 </body>
 </html>

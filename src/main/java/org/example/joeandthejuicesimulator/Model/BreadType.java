@@ -13,13 +13,13 @@ public enum BreadType {
     BRIOCHE("Brioche"),
     PITA("Pita");
 
-    private String displayName;
+    private final String displayName;
 
     BreadType(String displayName) {
         this.displayName = displayName;
     }
 
-    public String getDisplayName() {
+    public String displayName() {
         return displayName;
     }
 }
