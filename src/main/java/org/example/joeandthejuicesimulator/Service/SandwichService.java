@@ -10,7 +10,8 @@ import java.util.List;
 public class SandwichService {
 
     private SandwichRepository sandwichRepository;
-    public SandwichService() {
+    public SandwichService(SandwichRepository sandwichRepository) {
+        this.sandwichRepository = sandwichRepository;
     }
 
     public List<SandwichOrder> placeOrder(SandwichOrder sandwichOrder) {

@@ -19,7 +19,7 @@ public class SandwichController {
         this.sandwichService = sandwichService;
     }
 
-    @GetMapping("/order")
+    @GetMapping("")
     public String showOrderForm(Model model){
         SandwichOrder sandwichOrder = new SandwichOrder();
         sandwichOrder.setSize(Size.LARGE);

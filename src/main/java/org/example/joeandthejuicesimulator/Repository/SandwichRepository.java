@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public class SandwichRepository {
 
-    private List<SandwichOrder> sandwichOrderList = new ArrayList<>();
+    private List<SandwichOrder> sandwichOrderList;
 
     public SandwichRepository(List<SandwichOrder> sandwichOrderList) {
         this.sandwichOrderList = sandwichOrderList;
