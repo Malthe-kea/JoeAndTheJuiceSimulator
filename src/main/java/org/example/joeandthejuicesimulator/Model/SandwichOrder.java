@@ -1,5 +1,7 @@
 package org.example.joeandthejuicesimulator.Model;
 
+import java.util.List;
+
 public class SandwichOrder {
     private Topping topping;
     private Size size;
@@ -47,4 +49,5 @@ public class SandwichOrder {
     public void setCondiment(Condiment condiment) {
         this.condiment = condiment;
     }
+
 }

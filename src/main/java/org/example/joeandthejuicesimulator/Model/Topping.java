@@ -1,5 +1,8 @@
 package org.example.joeandthejuicesimulator.Model;
 
+import java.util.Arrays;
+import java.util.List;
+
 public enum Topping {
 
     LETTUCE("Lettuce"),
@@ -32,5 +35,9 @@ public enum Topping {
 
     public String displayToppings() {
         return displayToppings;
+    }
+
+    public static List<Topping> getAllToppings() {
+        return Arrays.asList(Topping.values());
     }
 }
