@@ -6,14 +6,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import java.util.UUID;
 
 @Controller()
 public class SandwichController {
     private SandwichService sandwichService;
-    private UUID uuid;
-
     public SandwichController(SandwichService sandwichService) {
         this.sandwichService = sandwichService;
     }
@@ -40,6 +39,21 @@ public class SandwichController {
     public String showOrders(Model model){
         model.addAttribute("orders", sandwichService.getSandwichOrderList());
         return "order-list";
+    }
+
+    @GetMapping("/order/edit/{id}")
+    public String editOrder(@PathVariable UUID id, Model model) {
+        SandwichOrder sandwichOrder = sandwichService.getSandwichOrderById(id);
+        if (sandwichOrder == null) {
+            throw new IllegalArgumentException("Invalid order ID");
+        }
+
+        model.addAttribute("sandwichOrder", sandwichOrder);
+        model.addAttribute("size",Size.values());
+        model.addAttribute("breadType", BreadType.values());
+        model.addAttribute("topping", Topping.getAllToppings());
+        model.addAttribute("condiment", Condiment.values());
+        return "order-form";
     }
 
 }

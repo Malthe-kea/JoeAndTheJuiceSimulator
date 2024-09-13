@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Order</title>
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" th:href="@{/stylesheet.css}">
 </head>
 <body>
 <h1> Sandwich Orders</h1>
@@ -14,6 +14,7 @@
         <strong th:text="${order.topping.displayToppings()}"></strong>,
         <strong th:text="${order.condiment.displayCondiments()}"></strong>
         Size: <strong th:text="${order.size.displaySize()}"></strong>
+        <a class="edit-link" th:href="@{/order/edit/{id}(id=${order.orderId})}">Edit</a>
 
     </li>
 </ul>
